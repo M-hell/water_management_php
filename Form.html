@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Advitiya</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f0f3f5;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            font-weight: bold;
+            display: flex;
+            position: fixed;  
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px; 
+            margin: 15px; 
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000; 
+        }
+        
+        .logo img {
+            height: 40px; /* Adjust as needed */
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        
+        .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px; 
+            font-family: Arial, sans-serif; 
+            transition: color 0.3s;  
+        }
+        
+        .nav-links a:hover {
+            color: blue;  
+        }
+        
+        .contact-button a {
+            background: linear-gradient(135deg, #0077B6, #00B4D8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+        .contact-button:hover a {
+            background: #0077B6;
+            box-shadow: 0 0 10px #48CAE4;
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+
+        
+ 
+        .sec1 {
+            margin: auto;
+            padding-top: 100px;  
+        }
+
+        .box1 {
+             
+                width: 80%;  
+                max-width: 600px;  
+                padding: 60px;  
+                margin: 0 auto;  
+                text-align: center;
+            
+             
+        }
+
+        .box1 h3 {
+            background-color: #b8d8ec;
+            border-radius: 10px;
+            color: #0077B6;
+            font-family: serif;
+            padding: 10px;
+        }
+
+        .box2 {
+            text-align: center;
+            color: black;
+            padding-bottom: 100px;
+        }
+
+        .box2 h1 {
+            font-size: 2.5em;
+        }
+
+        .box2 p {
+            font-size: 1.2em;
+            color: rgb(70, 69, 69);
+        }
+        .mynk{
+                width: 30% auto;  
+                max-width: 600px;  
+                padding: 60px;  
+                margin: 0 auto;  
+                text-align: center;
+        }
+
+        section {
+            
+            margin-top: 100px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form h1 {
+            margin: 10px 0;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid rgb(153, 153, 153);
+        }
+        .info-container {
+            display: flex;
+            flex-direction: row; /* Default to horizontal layout */
+            justify-content: space-between;
+            flex-wrap: wrap;  
+        }
+        .btn{
+            background: linear-gradient(135deg, #0077B6, #00B4D8);
+        }
+
+        footer {
+            font-family: sans-serif;
+            background-color: rgb(10, 10, 41);
+            color: #e2e8f0;
+            padding: 20px;
+        }
+
+        footer div {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        footer div > div {
+            flex: 1;
+            padding: 10px;
+            min-width: 200px; 
+        }
+         
+        
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;  
+                left: 0;
+                right: 0;
+                background-color: white;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+        
+            .nav-links a {
+                margin: 10px 0;
+                text-align: center;
+            }
+        
+            .hamburger {
+                display: block;
+            }
+        
+            .nav-active {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;  
+                left: 0;
+                right: 0;
+                background-color: white;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links a {
+                margin: 10px 0;
+                text-align: center;
+            }
+        
+            .hamburger {
+                display: block;
+            }
+        
+            .nav-active {
+                display: flex;
+            }
+             
+
+            .box1, .box2 {
+                padding: 10px;
+            }
+
+            .box2 h1 {
+                font-size: 2em;
+            }
+
+            .box2 p {
+                font-size: 1em;
+            }
+            .info-container {
+                flex-direction: column; 
+                align-items: center;  
+            }
+        
+            .info-container div {
+                margin: 10px 0;
+                text-align: center;  
+            }
+
+            footer div {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+             
+
+            form {
+                padding: 10px;
+            }
+        }
+         
+        
+        
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutUs.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+        </div>
+        <div class="contact-button">
+            <a href="form.html">Contact Us</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>
+    </nav>
+
+    <section class="sec1">
+        <div class="box1">
+            <h3>Get in Touch</h3>
+        </div>
+
+        <div class="box2">
+            <h1>Let's Start a <b style="color: orangered;">Conversation</b></h1>
+            <p>Whether you're looking to start a new project or just want to learn more about our services,<br> we're here to help.</p>
+        </div>
+    </section>
+
+    <section>
+        <div style="background-color: white; margin: 20px; padding: 20px; border-radius: 10px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div  class="mynk" style="background-color: orangered; padding: 20px; border-radius: 15px; color: white;">General Contact</div>
+            </div>
+            <form action="connect.php" method="get">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            
+                <label for="number">Phone Number</label>
+                <input type="text" id="number" name="number" placeholder="9617714737">
+            
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="johndoe@gmail.com" required>
+            
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" placeholder="Your Company LTD">
+            
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="How can we help you?" rows="4" required></textarea>
+            
+                <input class="btn" type="submit" value="Send Message 📝" id="submit" name="submit">
+            </form>
+            
+        </div>
+    </section>
+
+    <section style="background-color: #f0f0f1; padding: 20px;">
+        <div style="background-color: white; padding: 20px; border-radius: 20px;">
+            <div>
+                <img src="images/office.jpg" alt="" style="width: 100%; height: auto; border-radius: 10px;">
+            </div>
+            <div class="info-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;">
+                <div style="flex: 1; min-width: 200px; margin: 10px;">
+                    <h1>Office Address</h1>
+                    <h5 style="color: rgb(105, 104, 104); line-height: 18px;">Office No. 307, 9930 Spaces, 3, Mangal Nagar, <br> Bhawarkua, Indore-452001, <br> Madhya Pradesh, India</h5>
+                </div>
+                <div style="flex: 1; min-width: 200px; margin: 10px;">
+                    <h1>Business Hours</h1>
+                    <h5 style="color: rgb(105, 104, 104); line-height: 18px;">Monday - Friday: 9:00 AM - 6:00 PM <br> Saturday: 9:00 AM - 2:00 PM <br> Sunday: Closed</h5>
+                </div>
+                <div style="flex: 1; min-width: 200px; margin: 10px;">
+                    <h1>Contact Info</h1>
+                    <h5 style="color: rgb(105, 104, 104); line-height: 18px;">Phone: 08044566420<br> Email: Progressiveenvirocare@gmail.com<br> Support: Progressiveenvirocare@gmai.com</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ff5733">
+                    <path d="M12 2C12 2 5 12 5 16C5 19.3137 7.68629 22 11 22C14.3137 22 17 19.3137 17 16C17 12 12 2 12 2Z"></path>
+                </svg>
+                <div style="font-weight: bold; font-size: 1.2em; color: white; margin-left:-50px; margin-top:-8px;">Progressive Enviro Care</div>
+                <div style="line-height: 25px;color: white;">Leading provider of water management <br> solutions for industrial and municipal <br> applications.</div>
+            </div>
+
+            <div>
+                <div style="font-weight: bold;color: white;">Quick Links</div>
+                <div><a href="http://127.0.0.1:5500/aboutUs.html" style="color: #cbd5e0; text-decoration: none;">About Us</a></div>
+                <div><a href="http://127.0.0.1:5500/Services.html" style="color: #cbd5e0; text-decoration: none;">Services</a></div>
+                <div><a href="http://127.0.0.1:5500/projects.html" style="color: #cbd5e0; text-decoration: none;">Projects</a></div>
+                <div><a href="http://127.0.0.1:5500/Form.html" style="color: #cbd5e0; text-decoration: none;">Contact</a></div>
+            </div>
+
+            <div>
+                <div style="font-weight: bold;">Services</div>
+                <div style="color: #cbd5e0;">Industrial Treatment</div>
+                <div style="color: #cbd5e0;">Municipal Management</div>
+                <div style="color: #cbd5e0;">Water Analysis</div>
+                <div style="color: #cbd5e0;">Maintenance</div>
+            </div>
+
+            <div>
+                <div style="font-weight: bold;">Contact</div>
+                <div>Indore, Madhya Pradesh, India</div>
+                <div>08044566420</div>
+                <div style="color: #cbd5e0;">Progressiveenvirocare@gmail.com</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 20px;  background-color: #0a0e18 ; margin-bottom: -20px;">
+            © 2017 Progressive Enviro Care Pvt. Ltd. All rights reserved.
+        </div>
+    </footer>
+    <script  >
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html>

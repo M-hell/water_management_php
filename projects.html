@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Advitiya, a leader in wastewater treatment solutions. Our mission is to provide sustainable and cost-effective solutions to industries and municipalities.">
+    <title>Projects</title>
+    <style>
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9ff;
+            color: #333;
+        }
+        
+        .navbar {
+            font-weight: bold;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            margin: 15px;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        
+        .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: blue;
+        }
+        
+        .contact-button a {
+            background: linear-gradient(135deg, #0077B6, #00B4D8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+        .contact-button:hover a {
+            background: #0077B6;
+            box-shadow: 0 0 10px #48CAE4;
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .sec1 {
+            margin: auto;
+            padding: 20px;
+        }
+        
+        .box1 {
+            padding: 60px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        
+        .box1 h3 {
+            padding: 10px;
+            margin: 0;
+            background-color: #f0f3f5;
+            border-radius: 10px;
+            color: #0077B6;
+            font-family: serif;
+            text-align: center;
+        }
+        
+        #droplet {
+            margin-top: -100px;
+            margin-left: -50px;
+            width: 20px;
+            background-color: #e4eaee;
+        }
+        
+        .box2 {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20px;
+            color: black;
+        }
+        
+        .box2 h1 {
+            line-height: 1.2;
+            color: rgb(18, 12, 10);
+            margin: 0;
+        }
+        
+        .box2 p {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+            color: rgb(70, 69, 69);
+            margin-bottom: 50px;
+        }
+        
+        .box3 {
+            font-size: 10px;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .items {
+            display: grid;
+        }
+        
+        #item1 {
+            display: grid;
+            border: 1px solid black;
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+        
+        #item2 {
+            border: 1px solid black;
+            grid-row-start: 5;
+        }
+        
+        .hover-btn {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: 1px solid black;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .hover-btn:hover, button:hover {
+            background-color: red;
+        }
+        
+        ul li::marker {
+            color: orangered;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 50px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .stat-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-weight: bold;
+            font-size: 35px;
+            color: orangered;
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            font-size: 15px;
+            color: black;
+            margin: 0;
+        }
+        
+        footer {
+            font-family: sans-serif;
+            background-color: rgb(10, 10, 41);
+            color: #e2e8f0;
+            padding: 20px;
+            margin-top: 0;
+            position: relative;
+            bottom: 0;
+            width: 94%;
+        }
+        
+        footer div {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        footer div > div {
+            flex: 1;
+            padding: 10px;
+            min-width: 200px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+        
+            .nav-links a {
+                margin: 10px 0;
+                text-align: center;
+            }
+        
+            .hamburger {
+                display: block;
+            }
+        
+            .nav-active {
+                display: flex;
+            }
+        
+            h1 {
+                font-size: 2em;
+            }
+        
+            p {
+                font-size: 1em;
+            }
+        
+            div {
+                padding: 20px;
+            }
+        
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 30px;
+            }
+        
+            footer div {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            footer div > div {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        
+            .box1 {
+                padding: 40px;
+            }
+        
+            .box2 {
+                font-size: 2em;
+            }
+        
+            .box2 p {
+                font-size: 1em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+        
+            p {
+                font-size: 0.9em;
+            }
+        
+            button {
+                padding: 8px 16px;
+            }
+        
+            .stats-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        
+            .stat-card {
+                margin: 5px;
+            }
+        
+            .box1 {
+                padding: 20px;
+            }
+        
+            .box2 {
+                font-size: 1.5em;
+            }
+        
+            .box2 p {
+                font-size: 0.9em;
+            }
+        }
+
+    </style>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutUs.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+        </div>
+        <div class="contact-button">
+            <a href="form.html">Contact Us</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>
+    </nav>
+  <section class="sec1">
+    <div class="box1">
+        <h3>&nbsp;&nbsp;Our project</h3>
+
+    </div>
+
+    <div class="box2">
+        <h1>Transforming Water Management <br><h1 style="line-height: 1px; color: orangered; margin-top:30px;">Across India</h1> </h1> <br>
+   <p>Explore our portfolio of successful water management projects, showcasing inno <br> sustainability and excellence in execution</p>
+    </div>
+    <div>
+    </section>
+    
+        <!-- <div class="box3" style="margin-top: 20px;background-color: white; "> -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; background-color: white; padding: 15px; width: 100%; max-width: 100%; box-sizing: border-box; overflow-x: hidden;">
+                <!-- Pharmaceutical & Chemical Industries -->
+                <div style="background-color: rgb(243, 247, 248); padding: 15px; border-radius: 20px; width: 100%; box-sizing: border-box;">
+                    <div style="width: 91%;  padding-bottom: 60%; position: relative; overflow: hidden; border-radius: 10px;">
+                        <img src="images/project1.jpg" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h1 style="font-weight: bold; font-size: clamp(1.2rem, 2vw, 1.5rem); color: black; text-align: center; margin: 15px 0;">Pharmaceutical & Chemical Industries</h1>
+                    <p style="text-align: center; font-size: clamp(0.8rem, 1.5vw, 0.9rem); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(68, 67, 67); margin: 10px 0;">
+                        In Pharmaceutical and Chemical Industries, effluent treatment systems are crucial to manage the highly complex and hazardous wastewater generated during production processes. These industries often produce wastewater that contains organic compounds, solvents, heavy metals, and other toxic chemicals, making their treatment more challenging and specialized.
+                    </p>
+                    <h4 style="text-align: left; margin: 15px 0;">
+                        <u>Our Clientele</u>
+                        <ul style="list-style: none; padding-left: 15px; margin: 10px 0;">
+                            <li style="margin: 5px 0;">Nobal Pharma Indore</li>
+                            <li style="margin: 5px 0;">Mordern Pharma</li>
+                            <li style="margin: 5px 0;">Jepika Paints Pvt. Ltd Indore</li>
+                            <li style="margin: 5px 0;">Rusoma Laboratories Pvt Ltd Indore</li>
+                            <li style="margin: 5px 0;">Nandani Medical Laboratory Indore</li>
+                            <li style="margin: 5px 0;">Agro Solvent Pvt. Ltd Datia</li>
+                        </ul>
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0;">
+                        <div style="background-color: white; padding: 10px; border-radius: 10px; color: orangered; font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: bold; text-align: center;">
+                            50 MLD<br>
+                            <p style="color: black; margin: 5px 0;">Capacity</p>
+                        </div>
+                        <div style="background-color: white; padding: 10px; border-radius: 10px; color: orangered; font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: bold; text-align: center;">
+                            25 Acres<br>
+                            <p style="color: black; margin: 5px 0;">Area Recovery</p>
+                        </div>
+                    </div>
+                    <ul style="text-align: left; font-size: clamp(0.7rem, 1.2vw, 0.8rem); margin: 10px 0; list-style: disc; padding-left: 20px;">
+                        <li style="color: black; margin: 5px 0;">Advanced SCADA system</li>
+                        <li style="color: black; margin: 5px 0;">Biological treatment process</li>
+                        <li style="color: black; margin: 5px 0;">Energy recovery system</li>
+                    </ul>
+                </div>
+            
+                <!-- Hospitals & Hotel Industries -->
+                <div style="background-color: rgb(243, 247, 248); padding: 15px; border-radius: 20px; width: 100%; box-sizing: border-box;">
+                    <div style="width: 91%; padding-bottom: 60%; position: relative; overflow: hidden; border-radius: 10px;">
+                        <img src="images/project2.jpg" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h1 style="font-weight: bold; font-size: clamp(1.2rem, 2vw, 1.5rem); color: black; text-align: center; margin: 15px 0;">Hospitals & Hotel Industries</h1>
+                    <p style="text-align: center; font-size: clamp(0.8rem, 1.5vw, 0.9rem); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(68, 67, 67); margin: 10px 0;">
+                        In the Hospital and Hotel Industries, effluent treatment is essential to manage wastewater containing contaminants like pharmaceuticals, personal care products, food residues, oils, and grease. The wastewater generated by these industries typically involves a combination of organic and inorganic pollutants, which can vary in complexity.
+                    </p>
+                    <h4 style="text-align: left; margin: 15px 0;">
+                        <u>Our Clientele</u>
+                        <ul style="list-style: none; padding-left: 15px; margin: 10px 0;">
+                            <li style="margin: 5px 0;">Choithram Hospital & Research Center Indore</li>
+                            <li style="margin: 5px 0;">Hotel Amer Palace Bhopal</li>
+                            <li style="margin: 5px 0;">Aditya Hospital Indore</li>
+                            <li style="margin: 5px 0;">Chokhi Dhani Indore (MP)</li>
+                            <li style="margin: 5px 0;">Royal Shanti Health Care Indore</li>
+                            <li style="margin: 5px 0;">Chokhi Dhani Jaisalmer (Raj)</li>
+                        </ul>
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0;">
+                        <div style="background-color: white; padding: 10px; border-radius: 10px; color: orangered; font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: bold; text-align: center;">
+                            2 MLD<br>
+                            <p style="color: black; margin: 5px 0;">Capacity</p>
+                        </div>
+                        <div style="background-color: white; padding: 10px; border-radius: 10px; color: orangered; font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: bold; text-align: center;">
+                            95%<br>
+                            <p style="color: black; margin: 5px 0;">Recovery</p>
+                        </div>
+                    </div>
+                    <ul style="text-align: left; font-size: clamp(0.7rem, 1.2vw, 0.8rem); margin: 10px 0; list-style: disc; padding-left: 20px;">
+                        <li style="color: black; margin: 5px 0;">Zero liquid discharge</li>
+                        <li style="color: black; margin: 5px 0;">Heat recovery system</li>
+                        <li style="color: black; margin: 5px 0;">Remote monitoring capability</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin: 30px 0;"></div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; background-color: white; padding: 15px; width: 100%; max-width: 100%; box-sizing: border-box; overflow-x: hidden;">
+                <!-- Automobile Industries -->
+                <div style="background-color: rgb(243, 247, 248); padding: 15px; border-radius: 20px; width: 100%; box-sizing: border-box;">
+                    <div style="width: 91%; padding-bottom: 60%; position: relative; overflow: hidden; border-radius: 10px;">
+                        <img src="images/project3.jpg" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h1 style="font-weight: bold; font-size: clamp(1.2rem, 2vw, 1.5rem); color: black; text-align: center; margin: 15px 0;">Automobile Industries</h1>
+                    <p style="text-align: center; font-size: clamp(0.8rem, 1.5vw, 0.9rem); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(68, 67, 67); margin: 10px 0;">
+                        In the Automobile Industry, effluent treatment is essential due to the various processes involved in manufacturing vehicles, including metal treatment, painting, cooling, washing, and other processes that generate wastewater. This wastewater often contains a mix of hazardous chemicals, oils, solvents, heavy metals, and grease, making its treatment crucial for environmental compliance and resource conservation.
+                    </p>
+                    <h4 style="text-align: left; margin: 15px 0;">
+                        <u>Our Clientele</u>
+                        <ul style="list-style: none; padding-left: 15px; margin: 10px 0;">
+                            <li style="margin: 5px 0;">Harsh Hyundai Indore</li>
+                            <li style="margin: 5px 0;">Rajpal Auto Link Pvt. Ltd Indore</li>
+                            <li style="margin: 5px 0;">Shangi Motor Pvt. Ltd. Indore/Bhopal</li>
+                            <li style="margin: 5px 0;">Duggar Motor Pvt. Ltd. Bhopal</li>
+                            <li style="margin: 5px 0;">TVS Sundaram Iyanger & Sons Ashok Leyland (Bhopal, Sendhwa, Neemuch)</li>
+                            <li style="margin: 5px 0;">Black Diamond Motor Bilaspur</li>
+                        </ul>
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0;">
+                        <div style="background-color: white; padding: 10px; border-radius: 10px; color: orangered; font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: bold; text-align: center;">
+                            ₹2.5 Cr/year<br>
+                            <p style="color: black; margin: 5px 0;">Savings</p>
+                        </div>
+                        <div style="background-color: white; padding: 10px; border-radius: 10px; color: orangered; font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: bold; text-align: center;">
+                            45%<br>
+                            <p style="color: black; margin: 5px 0;">Leak Recovery</p>
+                        </div>
+                    </div>
+                    <ul style="text-align: left; font-size: clamp(0.7rem, 1.2vw, 0.8rem); margin: 10px 0; list-style: disc; padding-left: 20px;">
+                        <li style="color: black; margin: 5px 0;">Predictive maintenance</li>
+                        <li style="color: black; margin: 5px 0;">Smart metering</li>
+                        <li style="color: black; margin: 5px 0;">24/7 control room</li>
+                    </ul>
+                </div>
+            
+                <!-- Other Industries -->
+                <div style="background-color: rgb(243, 247, 248); padding: 15px; border-radius: 20px; width: 100%; box-sizing: border-box;">
+                    <div style="width: 91%; padding-bottom: 60%; position: relative; overflow: hidden; border-radius: 10px;">
+                        <img src="images/project4.jpg" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h1 style="font-weight: bold; font-size: clamp(1.2rem, 2vw, 1.5rem); color: black; text-align: center; margin: 15px 0;">Other Industries</h1>
+                    <p style="text-align: center; font-size: clamp(0.8rem, 1.5vw, 0.9rem); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(68, 67, 67); margin: 10px 0;">
+                        Effluent treatment is essential for various industries to ensure that wastewater, which can contain hazardous pollutants, is treated before being discharged into the environment. Each industry generates wastewater with distinct contaminants, which require specific treatment systems. Below are some industries that generate effluent and their specific treatment requirements.
+                    </p>
+                    <h4 style="text-align: left; margin: 15px 0;">
+                        <u>Our Clientele</u>
+                        <ul style="list-style: none; padding-left: 15px; margin: 10px 0;">
+                            <li style="margin: 5px 0;">Pratush-A Rechnocraft</li>
+                            <li style="margin: 5px 0;">Arjun Cotton Pvt Ltd Pune</li>
+                            <li style="margin: 5px 0;">Sourabh Industries</li>
+                            <li style="margin: 5px 0;">Chokhi Dhani Indore (MP)</li>
+                            <li style="margin: 5px 0;">Jaideep India Pvt Ltd Pithampur Indore</li>
+                        </ul>
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0;">
+    <div style="background-color: white; padding: 10px; border-radius: 10px; color: orangered; font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: bold; text-align: center;">
+        1.5 MLD<br>
+        <p style="color: black; margin: 5px 0;">Capacity</p>
+    </div>
+    <div style="background-color: white; padding: 10px; border-radius: 10px; color: orangered; font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: bold; text-align: center;">
+        100%<br>
+        <p style="color: black; margin: 5px 0;">Compliance</p>
+    </div>
+</div>
+<ul style="text-align: left; font-size: clamp(0.7rem, 1.2vw, 0.8rem); margin: 10px 0; list-style: disc; padding-left: 20px;">
+    <li style="color: black; margin: 5px 0;">Advanced oxidation process</li>
+    <li style="color: black; margin: 5px 0;">Membrane filtration</li>
+    <li style="color: black; margin: 5px 0;">Waste minimization</li>
+</ul>
+</div>
+</div>
+                
+                 <section>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                          <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/building-2.svg" alt="" width="50">
+                          <h1 class="stat-number">100+</h1>
+                          <p class="stat-label">Projects Completed</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                          <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/award.svg" alt="" width="50">
+                          <h1 class="stat-number">98%</h1>
+                          <p class="stat-label">Client Satisfaction</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                          <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/users.svg" alt="" width="50">
+                          <h1 class="stat-number">10+</h1>
+                          <p class="stat-label">Expert Engineers</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                          <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/clock.svg" alt="" width="50">
+                          <h1 class="stat-number">8+</h1>
+                          <p class="stat-label">Years Experience</p>
+                        </div>
+                      </div>
+                    </section>
+                   
+                          
+                                        
+                           
+
+                         
+                        
+                        <section style="margin-top: 10px;padding:40px; border: 0; background-color: rgb(243, 247, 248);">
+                            <div style="margin: 10% auto; padding: 1px; max-width: 800px;"> 
+                                <div style="border: 1px solid black; padding: 40px; border-radius: 20px; background: linear-gradient(135deg, #0077B6, #00B4D8);"> 
+                                    <h1 style="font-size: 2.5em; text-align: center; color: black; margin: 0;">
+                                        Ready to Start Your Project?
+                                    </h1>
+                                    <br>
+                                    <p style="font-size: 1.2em; text-align: center; color: white; margin: 0;">
+                                        Let's discuss how we can help you achieve your water management goals with our expertise and proven track record.
+                                    </p>
+                                    <br>
+                                    <button class="hover-btn" style="display: block; margin: 20px auto; border-radius: 10px; padding: 10px 20px; background-color: white; color: black; border: none;">
+                                        <a href="http://127.0.0.1:5500/Form.html" style="text-decoration: none; color: black;">Schedule Consultation</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                        
+                         
+
+                        <footer>
+                            <div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ff5733">
+                                        <path d="M12 2C12 2 5 12 5 16C5 19.3137 7.68629 22 11 22C14.3137 22 17 19.3137 17 16C17 12 12 2 12 2Z"></path>
+                                    </svg>
+                                    <div style="font-weight: bold; font-size: 1.2em; color: white; margin-left:-50px; margin-top:-8px;">Progressive Enviro Care</div>
+                                    <div style="line-height: 25px;color: white;">Leading provider of water management <br> solutions for industrial and municipal <br> applications.</div>
+                                </div>
+                    
+                                <div>
+                                    <div style="font-weight: bold;color: white;">Quick Links</div>
+                                    <div><a href="http://127.0.0.1:5500/aboutUs.html" style="color: #cbd5e0; text-decoration: none;">About Us</a></div>
+                                    <div><a href="http://127.0.0.1:5500/Services.html" style="color: #cbd5e0; text-decoration: none;">Services</a></div>
+                                    <div><a href="http://127.0.0.1:5500/projects.html" style="color: #cbd5e0; text-decoration: none;">Projects</a></div>
+                                    <div><a href="http://127.0.0.1:5500/Form.html" style="color: #cbd5e0; text-decoration: none;">Contact</a></div>
+                                </div>
+                    
+                                <div>
+                                    <div style="font-weight: bold;">Services</div>
+                                    <div style="color: #cbd5e0;">Industrial Treatment</div>
+                                    <div style="color: #cbd5e0;">Municipal Management</div>
+                                    <div style="color: #cbd5e0;">Water Analysis</div>
+                                    <div style="color: #cbd5e0;">Maintenance</div>
+                                </div>
+                    
+                                <div>
+                                    <div style="font-weight: bold;">Contact</div>
+                                    <div>Indore, Madhya Pradesh, India</div>
+                                    <div>08044566420</div>
+                                    <div style="color: #cbd5e0;">Progressiveenvirocare@gmail.com</div>
+                                </div>
+                            </div>
+                    
+                            <div style="text-align: center; padding: 20px;  background-color: #0a0e18 ; margin-bottom: -20px;">
+                                © 2017 Progressive Enviro Care Pvt. Ltd. All rights reserved.
+                            </div>
+                        </footer>
+                        <script  >
+                            document.getElementById('hamburger').addEventListener('click', function() {
+                                const navLinks = document.querySelector('.nav-links');
+                                navLinks.classList.toggle('nav-active');
+                            });
+                        </script>
+                        </body>
+
+                        </html>
+                        </body>
+                        </html>
