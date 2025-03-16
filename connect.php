@@ -9,7 +9,8 @@ $message = $_GET['message'] ?? ' ';
 
 
     // Database connection
-    $conn = new mysqli('localhost', 'root', '', 'testPHP');
+    // $conn = new mysqli('localhost', 'root', '', 'testphp');
+    $conn = new mysqli('sql106.infinityfree.com', 'if0_38530000', 'CghLSOtRVY', 'if0_38530000_testphp');
 
     // Check connection
     if ($conn->connect_error) {
