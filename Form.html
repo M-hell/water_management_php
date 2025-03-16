@@ -307,13 +307,13 @@
             <!-- change to post -->
             <form action="connect.php" method="get"> 
                 <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
             
                 <label for="number">Phone Number</label>
-                <input type="text" id="number" name="number" placeholder="9617714737">
+                <input type="text" id="number" name="number" placeholder="Contact number">
             
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="johndoe@gmail.com" required>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
             
                 <label for="company">Company Name</label>
                 <input type="text" id="company" name="company" placeholder="Your Company LTD">
@@ -349,49 +349,43 @@
         </div>
     </section>
 
-    <footer>
-        <div>
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ff5733">
+    <footer style="background-color: #0a0e18; color: white; padding: 20px 0; width: 100%;">
+        <div style="max-width: 1200px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 20px;">
+            <div style="flex: 1; min-width: 250px; margin-top: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ff5733 ">
                     <path d="M12 2C12 2 5 12 5 16C5 19.3137 7.68629 22 11 22C14.3137 22 17 19.3137 17 16C17 12 12 2 12 2Z"></path>
                 </svg>
-                <div style="font-weight: bold; font-size: 1.2em; color: white; margin-left:-50px; margin-top:-8px;">Progressive Enviro Care</div>
-                <div style="line-height: 25px;color: white;">Leading provider of water management <br> solutions for industrial and municipal <br> applications.</div>
+                <div style="font-weight: bold; font-size: 1.2em; margin-top: -8px;">Progressive Enviro Care</div>
+                <div style="line-height: 25px; color: #cbd5e0;">Leading provider of water management <br> solutions for industrial and municipal <br> applications.</div>
             </div>
-
-            <div>
-                <div style="font-weight: bold;color: white;">Quick Links</div>
-                <div><a href="http://127.0.0.1:5500/aboutUs.html" style="color: #cbd5e0; text-decoration: none;">About Us</a></div>
-                <div><a href="http://127.0.0.1:5500/Services.html" style="color: #cbd5e0; text-decoration: none;">Services</a></div>
-                <div><a href="http://127.0.0.1:5500/projects.html" style="color: #cbd5e0; text-decoration: none;">Projects</a></div>
-                <div><a href="http://127.0.0.1:5500/Form.html" style="color: #cbd5e0; text-decoration: none;">Contact</a></div>
+    
+            <div style="flex: 1; min-width: 200px;">
+                <div style="font-weight: bold;">Quick Links</div>
+                <div><a href="aboutUs.html" style="color: #cbd5e0; text-decoration: none;">About Us</a></div>
+                <div><a href="Services.html" style="color: #cbd5e0; text-decoration: none;">Services</a></div>
+                <div><a href="projects.html" style="color: #cbd5e0; text-decoration: none;">Projects</a></div>
+                <div><a href="Form.html" style="color: #cbd5e0; text-decoration: none;">Contact</a></div>
             </div>
-
-            <div>
+    
+            <div style="flex: 1; min-width: 200px;">
                 <div style="font-weight: bold;">Services</div>
                 <div style="color: #cbd5e0;">Industrial Treatment</div>
                 <div style="color: #cbd5e0;">Municipal Management</div>
                 <div style="color: #cbd5e0;">Water Analysis</div>
                 <div style="color: #cbd5e0;">Maintenance</div>
             </div>
-
-            <div>
+    
+            <div style="flex: 1; min-width: 200px;">
                 <div style="font-weight: bold;">Contact</div>
                 <div>Indore, Madhya Pradesh, India</div>
                 <div>08044566420</div>
                 <div style="color: #cbd5e0;">Progressiveenvirocare@gmail.com</div>
             </div>
         </div>
-
-        <div style="text-align: center; padding: 20px;  background-color: #0a0e18 ; margin-bottom: -20px;">
+    
+        <div style="text-align: center; padding: 15px; background-color: #0a0e18; width: 90%; margin-left: 65px;">
             © 2017 Progressive Enviro Care Pvt. Ltd. All rights reserved.
         </div>
     </footer>
-    <script  >
-        document.getElementById('hamburger').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('nav-active');
-        });
-    </script>
 </body>
-</html>
+</head>    
