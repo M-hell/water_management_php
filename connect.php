@@ -33,7 +33,3 @@ $message = $_GET['message'] ?? ' ';
     echo "Invalid request.";
 }
 ?>
-
-<?php
-echo "Hello World!";
-?>
