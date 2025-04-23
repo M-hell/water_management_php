@@ -510,7 +510,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['track_email'])) {
                 <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Services</a>
                 <a href="projects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Projects</a>
                 <a href="admin.php" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Admin</a>
-                <a href="form.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-300 transform hover:scale-105 shadow-md">Contact Us</a>
+                <a href="form.php" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-300 transform hover:scale-105 shadow-md">Contact Us</a>
               </div>
             </div>
             <div class="md:hidden">
@@ -528,7 +528,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['track_email'])) {
             <a href="aboutUs.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">About Us</a>
             <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Services</a>
             <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Projects</a>
-            <a href="form.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contact Us</a>
+            <a href="form.php" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contact Us</a>
           </div>
         </div>
       </nav>
@@ -756,7 +756,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['track_email'])) {
               <li><a href="aboutUs.html">About Us</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="projects.html">Projects</a></li>
-              <li><a href="form.html">Contact</a></li>
+              <li><a href="form.php">Contact</a></li>
             </ul>
           </div>
 
