@@ -3,601 +3,227 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advitiya</title>
+  <title>About Us - Progressive EnviroCare</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-in-out',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'slide-right': 'slideRight 0.8s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            slideRight: {
+              '0%': { transform: 'translateX(-20px)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-  }
-  
-  body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f9ff;
-      color: #333;
-  }
-  
-  .navbar {
-      font-weight: bold;
-      display: flex;
-      position: fixed;  
-      top: 0; 
-      left: 0; 
-      right: 0; 
-      justify-content: space-evenly;
-      align-items: center;
-      background-color: white;
-      border-radius: 20px; 
-      margin: 15px; 
-      padding: 10px 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 1000; 
-  }
-  
-  .logo img {
-      height: 40px;  
-  }
-  
-  .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-grow: 1;
-  }
-  
-  .nav-links a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: black;
-      font-size: 18px; 
-      font-family: Arial, sans-serif; 
-      transition: color 0.3s;  
-  }
-  
-  .nav-links a:hover {
-      color: blue;  
-  }
-  
-  .contact-button a {
-      background: linear-gradient(135deg, #0077B6, #00B4D8);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-  }
-  
-  .contact-button:hover a {
-      background: #0077B6;
-      box-shadow: 0 0 10px #48CAE4;
-  }
-  
-  .hamburger {
-      display: none;
-      font-size: 30px;
-      cursor: pointer;
-  }
-  
-  .image-container {
-      margin-top: 60px;
+    .nav-link {
       position: relative;
-      text-align: center;
-  }
-  
-  img {
-      height: 500px;
-  }
-  
-  .overlay-text {
+    }
+    .nav-link::after {
+      content: '';
       position: absolute;
-      top: 35%;
-      left: 40%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 43px;
-      font-weight: bolder;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .overlay-text-2 {
-      position: absolute;
-      top: 45%;
-      left: 40%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 15px;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .items {
-      border: 1px solid black;
-      display: grid;
-      width: 300px;
-      height: 150px;
-      margin: 30px auto;
-      border-radius: 10px;
-  }
-  
-  #box1 {
-      border: 1px solid black;
-      text-align: center;
-      margin-top: 50px;
-  }
-  
-  .block1 {
-      margin-top: 10px;
-      border-radius: 30px;
-  }
-  
-  #img1, #img2 {
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: brightness(0.9);
-  }
-  
-  #img1 {
-      background-image: url(images/project\ 6.jpg);
-      margin-top: -0px;
-      height: 200px;
-  }
-  
-  #img2 {
-      background-image: url(images/project5.jpg);
-  }
-  
-  .div {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px;
-      padding: 30px;
-      border-radius: 50px;
-      background-color: white;
-  }
-  
-  .div1, .div2 {
-      padding: 30px;
-      border-radius: 40px;
-  }
-  
-  .divB {
-      padding: 30px;
-      border-radius: 50px;
-      background-color: white;
-  }
-  
-  footer {
-      color: white;
-      background-color: rgb(14, 14, 39);
-      text-align: center;
-      padding: 20px;
-  }
-  
-  .owner {
-      display: flex;
-      justify-content: space-around;
-      margin: 20px 0;
-  }
-  
-  .name {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      gap: 10px;
-  }
-  
-  .social {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-  }
-  
-  .social img {
-      width: 40px;
-      height: 40px;
-      border-radius: 5px;
-      transition: transform 0.2s;
-  }
-  
-  .social img:hover {
-      transform: scale(1.1);
-      opacity: 0.8;
-  }
-  
-  #copyright {
-      font-size: 10px;
-      margin-top: 20px;
-  }
-  
-  .body-content {
-      border-radius: 30px;
-      margin: auto;
-      padding: 0px;
-  }
-  
-  .inbox {
-      font-size: 14px;
-      text-align: left;
-      margin-left: 30px;
-      margin-top: -1px;
-      border-radius: 10px;
-      top: 0px;
-      padding: 10px;
-      margin-bottom: 20px;
-      margin-right: 20px;
-      border: 1px solid rgb(240, 234, 234);
-  }
-  
-  .inbox strong {
-      margin-left: 20px;
-  }
-  
-  .inbox p {
-      font-size: 13px;
-  }
-  
-  .anime-img {
-      width: 225px;
-      gap: 100px;
-  }
-  
-  .trusted-text {
-      font-size: 24px;
-      font-weight: 700;
-      color: #1a1a1a;
-      text-align: center;
-      margin-top: 20px;
-      letter-spacing: 0.5px;
-  }
-  
-  .trusted-text span {
-      color: #4A90E2;
-      font-weight: 800;
-  }
-  
-  .core-values-container {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-  }
-  
-  @media (max-width: 1200px) {
-      #img1, #img2 {
-          width: 100%;
-          height: auto;
-      }
-  }
-  
-  @media (max-width: 768px) {
-      .nav-links {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 60px;
-          left: 0;
-          right: 0;
-          background-color: white;
-          border-radius: 0 0 10px 10px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-  
-      .nav-links a {
-          margin: 10px 0;
-          text-align: center;
-      }
-  
-      .hamburger {
-          display: block;
-      }
-  
-      .nav-active {
-          display: flex;
-      }
-  
-      .overlay-text {
-          font-size: 30px;
-      }
-  
-      .overlay-text-2 {
-          font-size: 12px;
-      }
-  
-      .div {
-          gap: 10px;
-      }
-  
-      .core-values-container {
-          justify-content: center;
-      }
-  
-      .core-values-container > div {
-          width: 100%;
-          max-width: 300px;
-          margin-bottom: 20px;
-      }
-  
-      header [style*="position: absolute"] {
-          padding: 15px;
-      }
-  
-      header h1 {
-          margin-bottom: 15px;
-      }
-  
-      header br {
-          display: none;
-      }
-  
-      footer {
-          padding: 15px;
-      }
-  }
-  
-  @media (max-width: 480px) {
-      .overlay-text {
-          font-size: 24px;
-      }
-  
-      .overlay-text-2 {
-          font-size: 10px;
-      }
-  
-      .div {
-          flex-direction: column;
-          align-items: center;
-      }
-  
-      #img1, #img2 {
-          width: 100%;
-          height: auto;
-      }
-  
-      header [style*="position: relative"] {
-          min-height: 250px;
-      }
-  
-      header [style*="position: absolute"] {
-          padding: 10px;
-      }
-  }
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #0ea5e9;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
   </style>
 </head>
-<body>
 
-  <nav class="navbar">
-    <div class="logo">
-        <img src="images/logo.jpg" alt="Logo">
-    </div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="aboutUs.html">About Us</a>
-        <a href="Services.html">Services</a>
-        <a href="projects.html">Projects</a>
-    </div>
-    <div class="contact-button">
-        <a href="Form.html">Contact Us</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-        &#9776;
-    </div>
-</nav>
-<br>
-
-<header style="position: relative; width: 100%; overflow: hidden;">
-<div style="position: relative; width: 100%; height: auto; min-height: 300px; max-height: 500px;">
-  <img 
-    src="images/about.jpg" 
-    alt="Image" 
-    style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75);"
-  >
-  <div style="
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 1200px;
-    text-align: left;
-    padding: 20px;
-  ">
-    <h1 style="
-      color: black;
-      font-size: clamp(24px, 4vw, 36px);
-      margin-bottom: 20px;
-      font-weight: bold;
-    ">
-      About Progressive EnviroCare
-    </h1>
-    <p style="
-      color: white;
-      font-size: clamp(16px, 2.5vw, 24px);
-      font-weight: bold;
-      line-height: 1.5;
-      margin: 0;
-    ">
-      Leading the way in sustainable water management and<br style="display: none; @media (min-width: 768px) { display: inline; }"> 
-      <br>plantation services for a greener tomorrow
-    </p>
-  </div>
-</div>
-</header>
-
-          
-    </header>
-    <main style="background-color: white;">
-        <br><br>
-        <div>
-            <h1 style="text-align: center;   font-family: 'Arial', sans-serif; color: black; margin-top:100px;">Our Mission </h1>
-            <br>
-            <p style="text-align: center;   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: rgb(75, 70, 70); word-spacing: 3px;">At <b>Progressive EnviroCare</b>, we're dedicated to revolutionizing water management and plantation <br> services through innovative, sustainable solutions. Our mission is to help businesses and <br> communities thrive while preserving our planet's most precious resource.</p>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <img src="images/logo.jpg" alt="Logo" class="h-12 w-auto rounded-lg">
         </div>
-        <br><br> <br> <br> <br><br> <br> <br>
-    </main>
-    <section style="padding: 40px; text-align: center;">
-        <h2 style="color: #333; margin-bottom: 30px; font-size: 28px;">Our Core Values</h2>
-        <br>
-        <div class="core-values-container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-            <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); width: 300px;">
-                <div style="background-color: #e1f0c4; width: 50px; height: 50px; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
-                    <span style="font-size: 24px; color: #276600;">
-                        <!-- SVG Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="width: 24px; height: 24px;">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 11.25v2.5m-4.5 0a4.5 4.5 0 014.5-4.5v4.5zm4.5 0a4.5 4.5 0 014.5-4.5v4.5M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75c5.385 0 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25z" />
-                          </svg>
-                    </span>
-                </div>
-                <h3 style="color: #333; margin-bottom: 15px;">Sustainability First</h3>
-                <p style="color: #666; line-height: 1.6;">We prioritize eco-friendly solutions that protect and preserve our environment for future generations.</p>
-            </div>
-    
-            <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); width: 300px;">
-                <div style="background-color: #dbeeff; width: 50px; height: 50px; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
-                    <span style="font-size: 24px; color: #1e3a8a;">
-                        <!-- SVG Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="width: 24px; height: 24px;">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 6v7.5a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2zM18 9.75v3.75c0 .621-.291 1.204-.768 1.66A3.36 3.36 0 0115.75 15h-5.5a3.36 3.36 0 01-2.782-.66C6.291 14.954 6 14.371 6 13.75v-3.75m12 0H6" />
-                          </svg>
-                         
-                    </span>
-                </div>
-                <h3 style="color: #333; margin-bottom: 15px;">Quality Assurance</h3>
-                <p style="color: #666; line-height: 1.6;">Our commitment to excellence ensures the highest standards in every project we undertake.</p>
-            </div>
-    
-            <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); width: 300px;">
-                <div style="background-color: #ffe5b4; width: 50px; height: 50px; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
-                    <span style="font-size: 24px; color: #cc6600;">
-                        <!-- SVG Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="width: 24px; height: 24px;">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14.25c-1.863 0-3.418.951-4.605 2.5m10.21 0C18.418 15.201 16.863 14.25 15 14.25m-6 0a2 2 0 11-4 0 2 2 0 014 0z" />
-                          </svg>
-                    </span>
-                </div>
-                <h3 style="color: #333; margin-bottom: 15px;">Customer Focus</h3>
-                <p style="color: #666; line-height: 1.6;">We build lasting relationships through exceptional service and tailored solutions.</p>
-            </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-8">
+            <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Home</a>
+            <a href="aboutUs.html" class="nav-link text-blue-600 px-3 py-2 text-sm font-medium">About Us</a>
+            <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Services</a>
+            <a href="projects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Projects</a>
+            <a href="admin.php" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Admin</a>
+            <a href="form.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-300 transform hover:scale-105 shadow-md">Contact Us</a>
+          </div>
         </div>
+        <div class="md:hidden">
+          <button id="hamburger" class="text-gray-700 hover:text-blue-600 focus:outline-none text-2xl">
+            &#9776;
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Home</a>
+        <a href="aboutUs.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">About Us</a>
+        <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Services</a>
+        <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Projects</a>
+        <a href="form.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative overflow-hidden">
+    <div class="relative h-96">
+      <img src="images/about.jpg" alt="About Us" class="w-full h-full object-cover filter brightness-75">
+      <div class="absolute inset-0 bg-black/30 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white animate-slide-up">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">About Progressive EnviroCare</h1>
+          <p class="text-xl md:text-2xl font-semibold max-w-2xl leading-relaxed">
+            Leading the way in sustainable water management and plantation services for a greener tomorrow
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Mission Section -->
+    <section class="text-center mb-20 animate-fade-in">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Mission</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        At <b class="text-blue-600">Progressive EnviroCare</b>, we're dedicated to revolutionizing water management and plantation services through innovative, sustainable solutions. Our mission is to help businesses and communities thrive while preserving our planet's most precious resource.
+      </p>
     </section>
-      <br><br> <br> <br>
-      <section style="padding: 40px; text-align: center; background-color: white;">
-        <h2 style="color: #333; margin-bottom: 30px; font-size: bolder; font-size: 28px;">Crafting better Future! </h2>
-        <br>
-        <div style="display: flex; justify-content: center; gap: 40px;">
 
-            <div id="img2" style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); width: 500px; ">
-                <div style=" margin: 0 auto 20px; display: flex;
-                    justify-content: center; align-items: center;">
-                  <span style="font-size: 24px; color: #276600;">
-                                       
-                </span>
-                </div>
-                <h3 style="color: black; margin-bottom: 15px; font-size: 30px; filter: brightness(1.5); height: 100px;">
-                  <!-- Water Management -->
-                </h3>
-                <p style="color: black; line-height: 1.6; ">
-                  
-                             </p>
-            </div>
-
-        
-
-            <div id="img1" style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); width: 500px;">
-                 <div style=" margin: 0 auto 20px; display: flex;
-                    justify-content: center; align-items: center;">
-                  <span style="font-size: 24px; color: #cc6600;">
- 
-                  </span>
-                </div>
-                <h3 style="color: white; margin-bottom: 15px; font-size: 30px;  background: cover; color: black;"></h3>
-                <p style="color: white; line-height: 1.6;">
-                   
-            </div>
-
+    <!-- Core Values -->
+    <section class="py-16 animate-fade-in">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Core Values</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:scale-105">
+          <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 11.25v2.5m-4.5 0a4.5 4.5 0 014.5-4.5v4.5zm4.5 0a4.5 4.5 0 014.5-4.5v4.5M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75c5.385 0 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">Sustainability First</h3>
+          <p class="text-gray-600">We prioritize eco-friendly solutions that protect and preserve our environment for future generations.</p>
         </div>
-    </section>
-    <br><br> <br> <br>  <br> 
-    <section style="margin-bottom: 100px; background-color: #0077B6;">
-        <div style="background-color: #eaf1f1; display: flex; flex-wrap: wrap; justify-content: center; padding: 40px;">
-            <div style="flex: 1; min-width: 300px; padding: 40px; margin: 20px;">
-                <h1 style="font-size: 35px; margin-top: 10px; margin-bottom: 20px;">💡 8+ Years of Excellence</h1>
-                <p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.6;">
-                    Founded in 2017, Progressive Enviro Care Pvt. Ltd. is the foremost Manufacturer of Effluent Wastewater Treatment Plant, Sewage Treatment Plant, etc. Our presented products are extremely used for their low maintenance, longer working life, top performance and durability. These products are developed using the advanced technology and best quality material, which is obtained from dependable dealers of market.
-                </p>
-    
-                <div style="display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap; justify-content: center;">
-                    <div style="background-color: white; padding: 20px; border-radius: 10px; width: 150px; text-align: center;">
-                        <b style="color: rgb(60, 60, 182); font-size: 30px;">100+</b><br>
-                        <b style="font-size: 15px;">Projects Completed</b>
-                    </div>
-                    <div style="background-color: white; padding: 20px; border-radius: 10px; width: 150px; text-align: center;">
-                        <b style="color: rgb(60, 60, 182); font-size: 30px;">98%</b><br>
-                        <b>Client Satisfaction</b>
-                    </div>
-                </div>
-            </div>
-    
-            <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; margin: 20px;">
-                <img src="images/Screenshot 2025-02-05 021529.png" alt="" style="max-width: 90%; height: auto;">
-            </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:scale-105">
+          <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 6v7.5a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2zM18 9.75v3.75c0 .621-.291 1.204-.768 1.66A3.36 3.36 0 0115.75 15h-5.5a3.36 3.36 0 01-2.782-.66C6.291 14.954 6 14.371 6 13.75v-3.75m12 0H6" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">Quality Assurance</h3>
+          <p class="text-gray-600">Our commitment to excellence ensures the highest standards in every project we undertake.</p>
         </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:scale-105">
+          <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14.25c-1.863 0-3.418.951-4.605 2.5m10.21 0C18.418 15.201 16.863 14.25 15 14.25m-6 0a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">Customer Focus</h3>
+          <p class="text-gray-600">We build lasting relationships through exceptional service and tailored solutions.</p>
+        </div>
+      </div>
     </section>
-    <footer style="font-family: sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #0a0a29, #001a33);">
-        <div style="text-align: center;">
-            <h1 style="color: white; margin-top: 10px; font-family: serif;">Progressive Enviro Care Pvt. Ltd.</h1>
-            <p style="color: white; background: linear-gradient(135deg, #0077B6, #00B4D8); font-family: serif; margin-top: 40px;
-                      border-radius: 80px; border: 1px solid wheat; padding: 12px; font-weight: bold; font-size: 18px; display: inline-block;">
-                Trust us, to help you!
+
+    <!-- Excellence Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl shadow-xl overflow-hidden mb-20 animate-slide-up">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold mb-8">💡 8+ Years of Excellence</h2>
+            <p class="text-lg leading-relaxed mb-8">
+              Founded in 2017, Progressive Enviro Care Pvt. Ltd. is the foremost Manufacturer of Effluent Wastewater Treatment Plant, Sewage Treatment Plant, etc. Our presented products are extremely used for their low maintenance, longer working life, top performance and durability.
             </p>
-            <p style="color: white; font-family: cursive; font-size: 18px; margin-top: 40px;">Together,</p>
-            <p style="color: #FFD700; font-weight: bold; text-transform: uppercase; text-decoration: underline; font-size: 20px; margin-top: 40px;">We Definitely Can & Will!</p>
+            <div class="flex gap-6">
+              <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                <p class="text-3xl font-bold text-yellow-400">100+</p>
+                <p class="font-semibold">Projects Completed</p>
+              </div>
+              <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                <p class="text-3xl font-bold text-yellow-400">98%</p>
+                <p class="font-semibold">Client Satisfaction</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <img src="images/Screenshot 2025-02-05 021529.png" alt="Excellence" class="rounded-xl shadow-2xl max-h-96">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        </div>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <!-- ... (Same footer as home page) ... -->
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
     
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 30px; gap: 250px;">
-            <div style="text-align: center; margin: 20px;">
-                <img src="images/dada.jpg" alt="Jitendra Singh Chouhan"
-                    style="width: 180px; height: 180px; border-radius: 50%; border: 3px solid #FFD700;">
-                <p style="font-weight: bold; color: #fff; margin-top: 10px;">Mr. Jitendra Singh Chouhan</p>
-                <p style="color: #ccc;">0731-4989282</p>
-            </div>
-            <div style="text-align: center; margin: 20px;">
-                <img src="images/bhaiya.jpg" alt="Nagendra Singh Chouhan"
-                    style="width: 180px; height: 180px; border-radius: 50%; border: 3px solid #FFD700;">
-                <p style="font-weight: bold; color: #fff; margin-top: 10px;">Mr. Nagendra Singh Chouhan</p>
-                <p style="color: #ccc;">+91 7024128882</p>
-            </div>
-        </div>
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Add animations on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
+      elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const elementBottom = el.getBoundingClientRect().bottom;
         
-    
+        if (elementTop < window.innerHeight && elementBottom > 0) {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    };
 
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="https://www.linkedin.com/feed/?linkOrigin=LI_BADGE&shareActive=true&shareUrl=https%3A%2F%2Fwww.indiamart.com%2Fprogressiveenvirocare%2F" target="_blank">
-                <img src="images/linkedin.png" alt="LinkedIn" style="width: 40px; height: 40px; margin: 0 10px; border-radius: 50%; transition: 0.3s;">
-            </a>
-            <a href="https://www.facebook.com/sharer.php?u=https://www.indiamart.com/progressiveenvirocare/" target="_blank">
-                <img src="images/Facebook.png" alt="Facebook" style="width: 40px; height: 40px; margin: 0 10px; border-radius: 50%; transition: 0.3s;">
-            </a>
-            <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.indiamart.com%2Fprogressiveenvirocare%2F" target="_blank">
-                <img src="images/X.png" alt="Twitter" style="width: 40px; height: 40px; margin: 0 10px; border-radius: 50%; transition: 0.3s;">
-            </a>
-        </div>
-    
-        <div style="text-align: center; margin-top: 80px; margin-bottom: 40px;">
-            <h5 style="color: white; font-weight: bold; font-size: 14px;">© 2017 Progressive Enviro Care Pvt. Ltd. All rights reserved.</h5>
-        </div>
-    </footer>
-    
-    <script>
-        document.getElementById('hamburger')?.addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('nav-active');
-        });
-    </script>
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Initial check
+  </script>
 </body>
-</html>    
+</html>

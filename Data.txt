@@ -1,2 +1,0 @@
-http://localhost/phpmyadmin/index.php?route=/sql&db=testphp&table=registration&pos=0
-

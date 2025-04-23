@@ -4,598 +4,391 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advitiya</title>
+  <title>Advitiya - Progressive Enviro Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-in-out',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'slide-right': 'slideRight 0.8s ease-out',
+            'pulse-slow': 'pulse 3s infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            slideRight: {
+              '0%': { transform: 'translateX(-20px)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f9ff;
-      color: #333;
+      background-image: url('images/file-V7W6V7cLRFBiKTWkmawQmA.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
     }
-
-    header {
-      text-align: center;
-      padding: 150px 20px 50px 20px;
-      color: black;
-      font-size: 50px;
+    
+    .bg-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
-
-    header h1 {
-      font-size: 56px;
-      margin-bottom: 10px;
-      text-decoration: underline;
+    
+    .carousel-item {
+      transition: transform 0.6s ease-in-out;
     }
-
-    header p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 18px;
-      line-height: 1.6;
-      text-align: left;
-      padding: 20px;
+    
+    .contact-icon {
+      transition: all 0.3s ease;
     }
-
-    main {
-      background: url("images/file-V7W6V7cLRFBiKTWkmawQmA.jpg");
-    }
-
-    .navbar {
-      font-weight: bold;
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      justify-content: space-evenly;
-      align-items: center;
-      background-color: white;
-      border-radius: 20px;
-      margin: 15px;
-      padding: 10px 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-    }
-
-    .logo img {
-      height: 40px;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-grow: 1;
-    }
-
-    .nav-links a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: black;
-      font-size: 18px;
-      font-family: Arial, sans-serif;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: blue;
-    }
-
-    .contact-button a {
-      background: linear-gradient(135deg, #0077B6, #00B4D8);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    .contact-button:hover a {
-      background: #0077B6;
-      box-shadow: 0 0 10px #48CAE4;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 30px;
-      cursor: pointer;
-    }
-
-    .body-content {
-      background-color: white;
-      border: 1px solid white;
-      border-radius: 30px;
-      margin: auto;
-      margin-bottom: 100px;
-      margin-top: 30px;
-      padding: 1px;
-      max-width: 900px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .body-content h1,
-    h3 {
-      text-decoration: underline #60A5FA;
-      margin-left: 30px;
-    }
-
-    .body-content h3 {
-      font-size: 23px;
-      text-align: left;
-      margin-left: 25px;
-    }
-
-    .body-content p {
-      margin: 15px;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-
-    .section-heading {
-      font-size: 30px;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .timeline-container {
-      width: 100%;
-      margin: 0 auto;
-      height: 50vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .timeline-text {
-      font-size: 30px;
-      gap: 30px;
-      font-weight: bold;
-      white-space: nowrap;
-      position: absolute;
-      color: #333;
-      animation: floatText 7s linear infinite;
-    }
-
-    .animation-img {
-      margin-top: 10px;
-    }
-
-    .anime-img {
-      width: 225px;
-      gap: 100px;
-    }
-
-    .trusted-text {
-      font-size: 24px;
-      font-weight: 700;
-      color: #1a1a1a;
-      text-align: center;
-      margin-top: 20px;
-      letter-spacing: 0.5px;
-    }
-
-    .trusted-text span {
-      color: #4A90E2;
-      font-weight: 800;
-    }
-
-    .inbox {
-      font-size: 14px;
-      text-align: left;
-      margin-left: 30px;
-      margin-top: -40px;
-      border-radius: 10px;
-
-      padding: 10px;
-      margin-bottom: 20px;
-      margin-right: 20px;
-      border: 1px solid rgb(240, 234, 234);
-    }
-
-    .inbox strong {
-      margin-left: 20px;
-    }
-
-    .inbox p {
-      font-size: 13px;
-    }
-
-    .form {
-      max-width: 100%;
-      padding: 10px;
-      margin-right: 0px;
-      margin-left: 420px;
-      margin-top: -310px;
-    }
-
-    .form-input,
-    .form-textarea,
-    .form-button {
-      border: 1px solid rgb(226, 215, 215);
-      border-radius: 5px;
-      margin: 10px;
-      padding: 10px;
-      width: calc(100% - 40px);
-      max-width: 400px;
-      box-sizing: border-box;
-    }
-
-    .form-textarea {
-      height: 100px;
-    }
-
-    .form-button {
-      background: linear-gradient(135deg, #116d9e, #1bc6e9);
-      color: rgb(0, 0, 0);
-      width: calc(100% - 40px);
-      max-width: 430px;
-    }
-
-    .form-button:hover {
-      background: #0077B6;
-      box-shadow: 0 0 10px #48CAE4;
-    }
-
-    footer {
-      color: white;
-      background-color: rgb(14, 14, 39);
-      text-align: center;
-      padding: 20px;
-    }
-
-    .owner {
-      display: flex;
-      justify-content: space-around;
-      margin: 20px 0;
-    }
-
-    .name {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      gap: 10px;
-    }
-
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-    }
-
-    .social img {
-      width: 40px;
-      height: 40px;
-      border-radius: 5px;
-      transition: transform 0.2s;
-    }
-
-    .social img:hover {
+    
+    .contact-icon:hover {
       transform: scale(1.1);
-      opacity: 0.8;
+      color: #0ea5e9;
     }
-
-    #copyright {
-      font-size: 10px;
-      margin-top: 20px;
+    
+    .nav-link {
+      position: relative;
     }
-
-    #head {
-      text-decoration: none;
-      font-size: 16px;
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #0ea5e9;
+      transition: width 0.3s ease;
     }
-
-    #subhead {
-      text-align: left;
-      margin-left: 10px;
-      margin-top: -15px;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-    }
-
-    h4,
-    h5,
-    h6 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-    }
-
-    p,
-    span,
-    li {
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 400;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    @keyframes floatText {
-      0% {
-        transform: translateX(100%);
-      }
-
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
-    @media (max-width: 1200px) {
-      .body-content {
-        padding: 20px;
-      }
-
-      header {
-        padding: 100px 20px 50px 20px;
-      }
-
-      .trusted-text {
-        font-size: 20px;
-      }
-
-      .anime-img {
-        width: 180px;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .body-content {
-        margin: 10px auto;
-        padding: 15px;
-        max-width: 90%;
-      }
-
-      .owner {
-        flex-direction: column;
-        margin-left: 0;
-        gap: 15px;
-      }
-
-      .form {
-        margin-left: 0;
-        margin-top: 20px;
-      }
-
-      .anime-img {
-        width: 150px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: white;
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-links a {
-        margin: 10px 0;
-        text-align: center;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .nav-active {
-        display: flex;
-      }
-
-      .timeline-container {
-        height: 40vh;
-      }
-
-      header {
-        padding: 80px 20px 50px 20px;
-      }
-
-      .body-content {
-        margin: 10px auto;
-        padding: 20px;
-        max-width: 95%;
-      }
-
-      .owner {
-        flex-direction: column;
-        margin-left: 0;
-        gap: 20px;
-      }
-
-      .name {
-        margin-top: 0;
-        gap: 20px;
-      }
-
-      .social a img {
-        border-radius: 100%;
-        transition: transform 0.5s ease-in-out;
-      }
-
-      .social a img:hover {
-        transform: scale(1.2);
-      }
-
-      .anime-img {
-        width: 120px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .body-content {
-        padding: 10px;
-      }
-
-      header {
-        padding: 60px 20px 30px 20px;
-      }
-
-      .trusted-text {
-        font-size: 18px;
-      }
-
-      .anime-img {
-        width: 100px;
-      }
-
-      .form {
-        margin-left: 0;
-        margin-top: 20px;
-      }
-
-      .social img {
-        width: 30px;
-        height: 30px;
-      }
+    
+    .nav-link:hover::after {
+      width: 100%;
     }
   </style>
 </head>
 
-<body>
-
-
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/logo.jpg" alt="Logo">
+<body class="font-sans antialiased">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50 bg-glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <img src="images/logo.jpg" alt="Logo" class="h-12 w-auto rounded-lg">
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-8">
+            <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Home</a>
+            <a href="aboutUs.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">About Us</a>
+            <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Services</a>
+            <a href="projects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Projects</a>
+            <a href="admin.php" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Admin</a>
+            <a href="form.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-300 transform hover:scale-105 shadow-md">Contact Us</a>
+            
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="hamburger" class="text-gray-700 hover:text-blue-600 focus:outline-none text-2xl">
+            &#9776;
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="aboutUs.html">About Us</a>
-      <a href="Services.html">Services</a>
-      <a href="projects.html">Projects</a>
-    </div>
-    <div class="contact-button">
-      <a href="Form.html">Contact Us</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-      &#9776;
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Home</a>
+        <a href="aboutUs.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">About Us</a>
+        <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Services</a>
+        <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Projects</a>
+        <a href="form.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contact Us</a>
+      </div>
     </div>
   </nav>
-  <main>
 
-
-    <header>
-      <div class="body-content">
-        <h1>Get in Touch</h1>
-        <p>
-          At <b> Progressive Enviro Care</b>, we specialize in the design, installation, and maintenance of
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Hero Section -->
+    <header class="bg-white bg-glass rounded-xl shadow-xl p-8 mb-12 animate-fade-in">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-slide-up">Get in Touch</h1>
+        <p class="text-lg text-gray-600 mb-8 animate-slide-up" style="animation-delay: 0.2s;">
+          At <b class="text-blue-600">Progressive Enviro Care</b>, we specialize in the design, installation, and maintenance of
           state-of-the-art wastewater management plants. With years of industry experience, we provide customized
           solutions to meet the unique needs of every client, ensuring efficient, environmentally responsible water
           treatment systems.
         </p>
 
-        <h3 style="margin-left: 45px;">Our Services</h3> <br>
-        <div class="inbox">
-          <h1 id="head">Wastewater Treatment Plant Installation</h1>
-          <p id="subhead">We offer comprehensive installation services for wastewater treatment plants, whether for
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4 text-left animate-slide-right" style="animation-delay: 0.4s;">Our Services</h3>
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg mb-8 animate-slide-up" style="animation-delay: 0.6s;">
+          <h1 id="head" class="text-xl font-bold text-gray-800 mb-3">Wastewater Treatment Plant Installation</h1>
+          <p id="subhead" class="text-gray-600">
+            We offer comprehensive installation services for wastewater treatment plants, whether for
             industrial, municipal, or commercial applications. Our team handles everything from planning and designing
             to construction and commissioning, ensuring that your wastewater treatment plant operates smoothly and
             efficiently.
           </p>
         </div>
-
-
       </div>
     </header>
+
+    <!-- Trusted By Section -->
+    <div class="text-center mb-16 animate-fade-in" style="animation-delay: 0.8s;">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-800 italic mb-12">"Trusted by Organizations Everywhere"</h1>
+      
+      <!-- Carousel -->
+      <div class="relative overflow-hidden h-64 md:h-80 rounded-xl shadow-lg bg-white bg-glass">
+        <div id="carousel" class="flex h-full transition-transform duration-700 ease-in-out">
+          <div class="carousel-item flex-shrink-0 w-full h-full flex items-center justify-center p-4">
+            <img src="images/firms.jpg" alt="Firms" class="max-h-full max-w-full object-contain rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item flex-shrink-0 w-full h-full flex items-center justify-center p-4">
+            <img src="images/plant.jpg" alt="Plant" class="max-h-full max-w-full object-contain rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item flex-shrink-0 w-full h-full flex items-center justify-center p-4">
+            <img src="images/Untitled.jpg" alt="Project" class="max-h-full max-w-full object-contain rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item flex-shrink-0 w-full h-full flex items-center justify-center p-4">
+            <img src="images/timeline1.jpg" alt="Firms" class="max-h-full max-w-full object-contain rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item flex-shrink-0 w-full h-full flex items-center justify-center p-4">
+            <img src="images/timeline2.jpg" alt="Plant" class="max-h-full max-w-full object-contain rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item flex-shrink-0 w-full h-full flex items-center justify-center p-4">
+            <img src="images/timeline3.jpg" alt="Project" class="max-h-full max-w-full object-contain rounded-lg shadow-md">
+          </div>
+        </div>
+        
+        <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 text-blue-600 p-2 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 text-blue-600 p-2 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+          <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 border border-blue-600"></button>
+          <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 border border-blue-600"></button>
+          <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 border border-blue-600"></button>
+          <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 border border-blue-600"></button>
+          <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 border border-blue-600"></button>
+          <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 border border-blue-600"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="bg-white bg-glass rounded-xl shadow-xl p-8 animate-fade-in" style="animation-delay: 1s;">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Contact us today!</h1>
+        <p class="text-lg text-gray-600 mb-8">
+          Have a project in mind or need more information? <br> Reach out to us and get personalized solutions for your
+          wastewater management needs.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-12 text-left">
+          <div class="flex items-start space-x-4 animate-slide-right" style="animation-delay: 1.2s;">
+            <div class="contact-icon text-blue-600 text-2xl mt-1">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800">Phone</h3>
+              <p class="text-gray-600">08044566420</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4 animate-slide-right" style="animation-delay: 1.4s;">
+            <div class="contact-icon text-blue-600 text-2xl mt-1">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800">Email</h3>
+              <p class="text-gray-600">Progressiveenvirocare@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4 animate-slide-right" style="animation-delay: 1.6s;">
+            <div class="contact-icon text-blue-600 text-2xl mt-1">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800">Address</h3>
+              <p class="text-gray-600">Indore, Madhya Pradesh, India</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="max-w-lg mx-auto animate-slide-up" style="animation-delay: 1.8s;">
+          <form action="connect.php" method="get" class="space-y-4">
+            <input type="text" name="name" required placeholder="Your Name" 
+                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+            <input type="email" name="email" required placeholder="Your Email" 
+                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+            <textarea name="message" required placeholder="Your Message" rows="4"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"></textarea>
+            <button type="submit" 
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <h1 class="trusted-text">"Trusted by Organizations Everywhere"</h1>
-
-  <div class="timeline-container animation-img">
-    <div class="timeline-text">
-      <img src="images/firms.jpg" alt="Firms" class="anime-img">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/plant.jpg" alt="Plant" class="anime-img">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/Untitled.jpg" alt="Project" class="anime-img">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/timeline1.jpg" alt="Firms" class="anime-img"
-        style="width: 200px; margin-top: 0px; height: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/timeline2.jpg" alt="Plant" class="anime-img" style="height: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/timeline3.jpg" alt="Project" class="anime-img" style="height: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
-
-  </div>
-
-  <div class="body-content">
-    <h1 style="text-align: center; text-decoration: none; font-weight: bolder; color: black;">Contact us today!</h1>
-    <h6 style="height: -5px;">
-
-    </h6>
-    <p style="color: black;">
-      Have a project in mind or need more information? <br> Reach out to us and get personalized solutions for <br> your
-      wastewater management needs. </p>
-    <p>
-      <img src="images/Screenshot 2025-02-04 011131.png" alt="" width="4%" height="10%">
-    <p style="margin-top: -57px; margin-left: 55px;">08044566420</p> <br>
-    <img src="images/Screenshot 2025-02-04 011138.png" alt="" width="4%" height="1%"
-      style="margin-left: 14px; margin-top: -50px;">
-    <p style="margin-left:58px; margin-top: -32px;">Progressiveenvirocare@gmail.com</p><br>
-    <img src="images/Screenshot 2025-02-04 011122.png" alt="" width="4%" height="1%"
-      style="margin-left: 14px; margin-top: -50px;">
-    <p style="margin-left:55px; margin-top: -32px;">Indore, Madhya Pradesh, India</p><br>
-    <br>
-
-    </p>
-    <div class="form">
-      <form action="connect.php" method="get">
-        <input type="text" name="name" required="required" placeholder="Your Name" class="form-input"><br>
-        <input type="email" name="email" required="required" placeholder="Your Email" class="form-input"><br>
-        <textarea name="message" required="required" placeholder="Your Message" class="form-textarea"></textarea><br>
-        <button type="submit" id="submit" class="form-button">Send Message</button>
-      </form>
-    </div>
-
-
-  </div>
-  <footer style="font-family: 'Poppins', sans-serif; margin: 0; padding: 30px; background: linear-gradient(135deg, #0a0a29, #002244);">
-    <div style="text-align: center;">
-        <h1 style="color: #fff; margin-top: 10px; font-size: 24px;">Progressive Enviro Care Pvt. Ltd.</h1>
-        <p style="color: white; background: linear-gradient(135deg, #0077B6, #00B4D8); border-radius: 50px; border: 1px solid wheat; padding: 12px; font-weight: bold; font-size: 18px; display: inline-block;">
-            Trust us, to help you!
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-10">
+        <h1 class="text-2xl md:text-3xl font-bold mb-4">Progressive Enviro Care Pvt. Ltd.</h1>
+        <p class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold px-6 py-2 rounded-full border border-white shadow-lg mb-4">
+          Trust us, to help you!
         </p>
-        <p style="color: #f8f8f8; font-style: italic; font-size: 18px;">Together,</p>
-        <p style="color: #FFD700; font-weight: bold; text-transform: uppercase; text-decoration: underline; font-size: 20px;">We Definitely Can & Will!</p>
-    </div>
+        <p class="text-lg italic mb-2">Together,</p>
+        <p class="text-xl font-bold uppercase underline decoration-yellow-400 text-yellow-300">
+          We Definitely Can & Will!
+        </p>
+      </div>
 
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 30px; gap: 250px;">
-      <div style="text-align: center; margin: 20px;">
+      <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-32 mb-12">
+        <div class="text-center animate-slide-up" style="animation-delay: 0.2s;">
           <img src="images/dada.jpg" alt="Jitendra Singh Chouhan"
-              style="width: 180px; height: 180px; border-radius: 50%; border: 3px solid #FFD700;">
-          <p style="font-weight: bold; color: #fff; margin-top: 10px;">Mr. Jitendra Singh Chouhan</p>
-          <p style="color: #ccc;">0731-4989282</p>
-      </div>
-      <div style="text-align: center; margin: 20px;">
+               class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-yellow-400 mx-auto mb-4 shadow-lg object-cover">
+          <p class="font-bold text-lg">Mr. Jitendra Singh Chouhan</p>
+          <p class="text-blue-200">0731-4989282</p>
+        </div>
+        <div class="text-center animate-slide-up" style="animation-delay: 0.4s;">
           <img src="images/bhaiya.jpg" alt="Nagendra Singh Chouhan"
-              style="width: 180px; height: 180px; border-radius: 50%; border: 3px solid #FFD700;">
-          <p style="font-weight: bold; color: #fff; margin-top: 10px;">Mr. Nagendra Singh Chouhan</p>
-          <p style="color: #ccc;">+91 7024128882</p>
+               class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-yellow-400 mx-auto mb-4 shadow-lg object-cover">
+          <p class="font-bold text-lg">Mr. Nagendra Singh Chouhan</p>
+          <p class="text-blue-200">+91 7024128882</p>
+        </div>
       </div>
-  </div>
-  
 
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="https://www.linkedin.com/feed/?linkOrigin=LI_BADGE&shareActive=true&shareUrl=https%3A%2F%2Fwww.indiamart.com%2Fprogressiveenvirocare%2F" target="_blank">
-            <img src="images/linkedin.png" alt="LinkedIn" style="width: 40px; height: 40px; margin: 0 10px; border-radius: 50%; transition: 0.3s;">
+      <div class="flex justify-center space-x-6 mb-10">
+        <a href="https://www.linkedin.com/feed/?linkOrigin=LI_BADGE&shareActive=true&shareUrl=https%3A%2F%2Fwww.indiamart.com%2Fprogressiveenvirocare%2F" 
+           target="_blank" class="text-white hover:text-blue-300 text-2xl transition-transform hover:scale-110">
+          <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://www.facebook.com/sharer.php?u=https://www.indiamart.com/progressiveenvirocare/" target="_blank">
-            <img src="images/Facebook.png" alt="Facebook" style="width: 40px; height: 40px; margin: 0 10px; border-radius: 50%; transition: 0.3s;">
+        <a href="https://www.facebook.com/sharer.php?u=https://www.indiamart.com/progressiveenvirocare/" 
+           target="_blank" class="text-white hover:text-blue-300 text-2xl transition-transform hover:scale-110">
+          <i class="fab fa-facebook"></i>
         </a>
-        <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.indiamart.com%2Fprogressiveenvirocare%2F" target="_blank">
-            <img src="images/X.png" alt="Twitter" style="width: 40px; height: 40px; margin: 0 10px; border-radius: 50%; transition: 0.3s;">
+        <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.indiamart.com%2Fprogressiveenvirocare%2F" 
+           target="_blank" class="text-white hover:text-blue-300 text-2xl transition-transform hover:scale-110">
+          <i class="fab fa-twitter"></i>
         </a>
-    </div>
+      </div>
 
-    <div style="text-align: center; margin-top: 30px;">
-        <h5 style="color: white; font-weight: bold; font-size: 14px;">© 2017 Progressive Enviro Care Pvt. Ltd. All rights reserved.</h5>
+      <div class="text-center">
+        <p class="text-sm text-blue-200">
+          © 2017 Progressive Enviro Care Pvt. Ltd. All rights reserved.
+        </p>
+      </div>
     </div>
-</footer>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Carousel functionality
+    const carousel = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    
+    let currentIndex = 0;
+    const itemCount = document.querySelectorAll('.carousel-item').length;
+    
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add('bg-blue-600');
+          indicator.classList.remove('bg-opacity-50');
+        } else {
+          indicator.classList.remove('bg-blue-600');
+          indicator.classList.add('bg-opacity-50');
+        }
+      });
+    }
+    
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+      updateCarousel();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % itemCount;
+      updateCarousel();
+    });
+    
+    // Auto-advance carousel
+    let interval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % itemCount;
+      updateCarousel();
+    }, 5000);
+    
+    // Pause on hover
+    carousel.parentElement.addEventListener('mouseenter', () => {
+      clearInterval(interval);
+    });
+    
+    carousel.parentElement.addEventListener('mouseleave', () => {
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % itemCount;
+        updateCarousel();
+      }, 5000);
+    });
+    
+    // Click on indicators
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+    
+    // Initialize
+    updateCarousel();
+  </script>
 </body>
 </html>
