@@ -716,11 +716,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['track_email'])) {
         </div>
 
         <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235526.9092454033!2d75.7247619!3d22.7239117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.132499776856!2d75.85737369515262!3d22.68611093251623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcf0d0b1dce3%3A0x4fde2bf8af95b05f!2sProgressive%20Enviro%20Care%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1745572362167!5m2!1sen!2sin" allowfullscreen=""
+          loading="lazy"></iframe>
+          
         </div>
       </div>
     </section>
